@@ -1,0 +1,178 @@
+<div [ngClass]="allowScroll === 1 ? 'scoll-unlock' : 'scroll-lock'">
+    <div [ngClass]="allowSup === 1 ? 'landing' : 'new-sup'">
+        <div class="welcome">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>
+                        Welcome to Netflix Recommender!
+                    </mat-card-title>
+                    <mat-card-subtitle>
+                        Enter your username to get started.
+                    </mat-card-subtitle>
+                </mat-card-header>
+                <div class="user">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Username</mat-label>
+                        <input
+                            matInput
+                            placeholder="Username"
+                            [formControl]="myControl"
+                        />
+                        <mat-error *ngIf="myControl.invalid"
+                            >Cannot be blank</mat-error
+                        >
+                    </mat-form-field>
+                </div>
+                <button
+                    mat-flat-button
+                    color="primary"
+                    (click)="checkToScroll()"
+                >
+                    Enter
+                </button>
+            </mat-card>
+        </div>
+    </div>
+    <div [ngClass]="allowSup === 1 ? 'sup' : 'newwww'">
+        <mat-toolbar color="primary">
+            <span>My Application</span>
+        </mat-toolbar>
+        <mat-drawer-container class="example-container">
+            <mat-drawer mode="side" opened>
+                <div class="flex-container">
+                    <div class="movie-icon">
+                        <mat-icon> movie </mat-icon>
+                    </div>
+                    <div class="username">
+                        <span>{{ userName }}</span>
+                    </div>
+                    <div class="subtext">
+                        <span>Choose from the options below</span>
+                    </div>
+                </div>
+                <mat-divider></mat-divider>
+                <div class="other-flex">
+                    <div class="recommend" (click)="toRecView()">
+                        Recommender
+                    </div>
+                    <div class="list" (click)="toListView()">MyList</div>
+                </div>
+            </mat-drawer>
+            <mat-drawer-content>
+                <div
+                    class="recView"
+                    [ngStyle]="{ display: onRecView === 0 ? 'none' : 'block' }"
+                >
+                    <mat-horizontal-stepper [linear]="true" #stepper>
+                        <mat-step>
+                            <ng-template matStepLabel
+                                >Fill out information</ng-template
+                            >
+                            <div class="card">
+                                <mat-card>
+                                    <mat-card-header>
+                                        <mat-card-title>
+                                            Please enter your preferences
+                                        </mat-card-title>
+                                        <mat-card-subtitle>
+                                            You do not need to fill out all
+                                            fields!
+                                        </mat-card-subtitle>
+                                    </mat-card-header>
+                                    <div class="card-flex">
+                                        <div class="picpic">
+                                            <img
+                                                src="https://i.pinimg.com/originals/0b/44/ff/0b44ff30dbe13528285e97eb23b3e185.png"
+                                                width="300"
+                                                height="200"
+                                            />
+                                        </div>
+                                        <div class="fieldfield">
+                                            <div *ngFor="let field of fields">
+                                                <app-form
+                                                    [formInfo]="field"
+                                                    (infoChange)="
+                                                        updateInfo(
+                                                            $event.field,
+                                                            $event.content
+                                                        )
+                                                    "
+                                                ></app-form>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="submit">
+                                        <button
+                                            mat-flat-button
+                                            matStepperNext
+                                            color="primary"
+                                            (click)="getMovieList()"
+                                        >
+                                            Submit
+                                        </button>
+                                    </div>
+                                </mat-card>
+                            </div>
+                        </mat-step>
+                        <mat-step>
+                            <ng-template matStepLabel>Done</ng-template>
+                            <div
+                                class="display"
+                                *ngFor="let movie of movieTitles"
+                            >
+                                <mat-card>
+                                    <app-display
+                                        [inTitle]="movie"
+                                        [userName]="userName"
+                                    ></app-display>
+                                </mat-card>
+                            </div>
+                            <div class="reset">
+                                <button
+                                    mat-raised-button
+                                    color="warn"
+                                    (click)="stepper.reset()"
+                                >
+                                    Reset
+                                </button>
+                            </div>
+                        </mat-step>
+                    </mat-horizontal-stepper>
+                </div>
+                <div
+                    class="display"
+                    [ngStyle]="{ display: onRecView === 1 ? 'none' : 'block' }"
+                    *ngFor="let movie of myMovies"
+                >
+                    <mat-card>
+                        <app-mylist
+                            [inMovie]="movie.title"
+                            [inNotes]="movie.notes"
+                            [userID]="userName"
+                            (removeCurr)="removeMovie($event)"
+                        ></app-mylist>
+                    </mat-card>
+                </div>
+            </mat-drawer-content>
+        </mat-drawer-container>
+    </div>
+</div>
+
+<!-- <mat-drawer-container class="example-container">
+    <mat-drawer mode="side" opened>
+        <div class="flex-conatiner">
+            <div class="icon">
+                <span class="material-icons"> movie </span>
+            </div>
+            <div class="username">
+                <span>Username</span>
+            </div>
+            <div class="subtext">
+                <span>Loreum ipsum brother</span>
+            </div>
+        </div>
+        <mat-divider></mat-divider>
+    </mat-drawer>
+    <mat-drawer-content>Main content</mat-drawer-content>
+</mat-drawer-container> -->

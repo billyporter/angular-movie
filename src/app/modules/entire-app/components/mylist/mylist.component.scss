@@ -1,0 +1,143 @@
+$title-size: 25px;
+
+p {
+    margin: 0px;
+}
+
+.display {
+    width: 100%;
+    height: 350px;
+    display: flex;
+    outline: 5px black;
+}
+
+.poster {
+    background-color: black;
+    width: 236px;
+}
+
+.info {
+    margin-left: 20px;
+    width: 676px;
+}
+
+.title-flex {
+    display: flex;
+    width: 100%;
+    height: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.title {
+    margin-right: 10px;
+    font-size: $title-size;
+    font-weight: 900;
+}
+
+.year {
+    font-size: $title-size;
+    font-weight: 100;
+    opacity: 0.7;
+}
+
+.subinfo-flex {
+    display: flex;
+    font-size: 13px;
+    opacity: 0.7;
+    margin-top: 0px;
+
+    div {
+        margin-right: 8px;
+    }
+}
+
+.plot {
+    opacity: 0.9;
+    margin-top: 5px;
+    word-spacing: 2px;
+    letter-spacing: 0.3px;
+    font-weight: 100;
+    font-size: 12px;
+}
+
+.dir-flex {
+    display: flex;
+    margin-top: 15px;
+    font-size: 13px;
+    opacity: 0.9;
+    p {
+        span {
+            color: blue;
+        }
+    }
+}
+
+.cast {
+    margin-left: 10px;
+}
+
+.stars {
+    margin-top: 10px;
+    p {
+        font-size: 15px;
+        vertical-align: text-top;
+        mat-icon {
+            color: yellow;
+            font-size: 15px;
+            -webkit-text-stroke: 0.2px black;
+        }
+    }
+}
+
+.bookmark {
+    margin-left: 20px;
+}
+
+.mat-divider {
+    width: 700px;
+    border-top-color: gray;
+    margin-left: 270px;
+    margin-top: 20px;
+}
+
+.header {
+    margin-top: 25px;
+    font-size: 20px;
+    opacity: 0.9;
+}
+.notes {
+    opacity: 0.9;
+}
+
+.note-content {
+    margin-top: 5px;
+}
+
+.add-notes {
+    margin-top: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    width: 100%;
+    height: 50px;
+}
+
+.note-form {
+    margin-bottom: 50px;
+    width: 90%;
+    margin-right: 0;
+}
+
+.form-form {
+    height: 25px;
+    width: 100%;
+    font-size: 14px;
+}
+
+.submit-button {
+    text-align: center;
+    width: 10%;
+    margin-top: 22px;
+    margin-right: 50px;
+}

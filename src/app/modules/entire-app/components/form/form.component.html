@@ -1,0 +1,20 @@
+<div class="flex-container">
+    <div class="form">
+        <mat-form-field appearance="standard">
+            <mat-label>{{ formInfo }}</mat-label>
+            <input
+                matInput
+                placeholder="Enter"
+                [formControl]="myControl"
+                [matAutocomplete]="auto"
+            />
+            <mat-autocomplete #auto="matAutocomplete">
+                <mat-option
+                    *ngFor="let actor of filteredActors | async"
+                    [value]="actor"
+                    >{{ actor }}
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+    </div>
+</div>

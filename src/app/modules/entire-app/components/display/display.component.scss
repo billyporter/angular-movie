@@ -1,0 +1,92 @@
+$title-size: 25px;
+
+p {
+    margin: 0px;
+}
+
+.display {
+    width: 100%;
+    height: 350px;
+    display: flex;
+}
+
+.poster {
+    background-color: yellow;
+    width: 236px;
+}
+
+.info {
+    margin-left: 20px;
+    width: 676px;
+}
+
+.title-flex {
+    display: flex;
+    width: 100%;
+    height: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.title {
+    margin-right: 10px;
+    font-size: $title-size;
+    font-weight: 900;
+}
+
+.year {
+    font-size: $title-size;
+    font-weight: 100;
+    opacity: 0.7;
+}
+
+.subinfo-flex {
+    display: flex;
+    font-size: 13px;
+    opacity: 0.7;
+    margin-top: 0px;
+
+    div {
+        margin-right: 8px;
+    }
+}
+
+.plot {
+    opacity: 0.9;
+    margin-top: 20px;
+    word-spacing: 2px;
+    letter-spacing: 0.3px;
+    font-weight: 100;
+}
+
+.dir-flex {
+    display: flex;
+    margin-top: 20px;
+    font-size: 13px;
+    opacity: 0.9;
+    p {
+        span {
+            color: blue;
+        }
+    }
+}
+
+.cast {
+    margin-left: 10px;
+}
+
+.stars {
+    margin-top: 10px;
+    p {
+        vertical-align: text-top;
+        mat-icon {
+            color: yellow;
+            font-size: 20px;
+            -webkit-text-stroke: 0.2px black;
+        }
+    }
+}
+
+.bookmark {
+    margin-left: 20px;
+}

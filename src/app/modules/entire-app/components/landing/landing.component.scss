@@ -1,0 +1,169 @@
+$back-col: #cfd8dc;
+.landing {
+    background-color: whitesmoke;
+    background-image: url("https://www.vshsolutions.com/wp-content/uploads/2020/02/recommender-system-for-movie-recommendation.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+.welcome {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    mat-card {
+        height: 200px;
+        width: 400px;
+    }
+    mat-card-header {
+        justify-content: center;
+        mat-card-subtitle {
+            margin-left: 50px;
+        }
+    }
+    mat-form-field {
+        margin-left: 100px;
+    }
+    button {
+        margin-left: 150px;
+    }
+}
+
+.sup {
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+.new-sup {
+    display: none;
+}
+.newwww {
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+}
+
+mat-drawer {
+    display: flex;
+    width: 20vw;
+}
+
+mat-drawer-container {
+    height: 93vh;
+}
+
+.flex-container {
+    text-align: center;
+    justify-content: space-evenly;
+    display: flex;
+    flex-direction: column;
+    height: 25vh;
+    width: 100%;
+}
+
+mat-icon {
+    font-size: 60px;
+    vertical-align: middle;
+    margin-right: 24px;
+}
+
+mat-divider {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.movie-icon {
+    height: 30%;
+}
+
+.username {
+    font-size: 25px;
+}
+
+.subtext {
+    font-size: 15px;
+    opacity: 0.8;
+}
+
+.other-flex {
+    text-align: center;
+    justify-content: start;
+    display: flex;
+    flex-direction: column;
+    height: 40vh;
+    width: 100%;
+    font-weight: 100;
+    opacity: 0.9;
+    letter-spacing: 1px;
+}
+
+.recommend {
+    height: 6vh;
+    font-size: 20px;
+}
+
+.list {
+    height: 6vh;
+    font-size: 20px;
+}
+
+.card {
+    margin: auto;
+    width: 80%;
+}
+
+.submit,
+.reset {
+    width: 100%;
+    text-align: center;
+    margin: auto;
+}
+
+.reset {
+    margin-top: 20px;
+}
+
+.display {
+    margin-top: 20px;
+    width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.scroll-lock {
+    position: fixed;
+    display: inline-block;
+    // overflow-y: hidden;
+}
+
+.scroll-unlock {
+    position: static;
+}
+
+.recommend:hover,
+.list:hover {
+    color: #1a73e9;
+    cursor: pointer;
+}
+
+mat-horizontal-stepper {
+    background-color: $back-col !important;
+}
+
+mat-drawer-content {
+    background-color: $back-col !important;
+}
+
+.card-flex {
+    display: flex;
+    justify-content: space-around;
+}

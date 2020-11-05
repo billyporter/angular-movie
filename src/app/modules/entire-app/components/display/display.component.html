@@ -1,0 +1,60 @@
+<div class="display">
+    <div class="poster">
+        <img src="{{ movieInfo.poster }}" height="350" width="236" />
+    </div>
+    <div class="info">
+        <div class="title-flex">
+            <div class="title">
+                <p>{{ movieInfo.title }}</p>
+            </div>
+            <div class="year">
+                <p>({{ movieInfo.year }})</p>
+            </div>
+            <div class="bookmark">
+                <button
+                    mat-flat-button
+                    color="primary"
+                    (click)="addToMyList()"
+                    (error)="useStockPhoto()"
+                >
+                    Add
+                </button>
+            </div>
+        </div>
+        <div class="subinfo-flex">
+            <div class="rated">
+                <p>{{ movieInfo.rated }}</p>
+            </div>
+            <div>
+                <p>|</p>
+            </div>
+            <div class="runtime">
+                <p>{{ movieInfo.runtime }}</p>
+            </div>
+            <div>
+                <p>|</p>
+            </div>
+            <div class="Genre">
+                <p>{{ movieInfo.genre }}</p>
+            </div>
+        </div>
+        <div class="stars">
+            <p><mat-icon> star_rate </mat-icon> {{ movieInfo.rating }}</p>
+        </div>
+        <div class="plot">
+            <p>{{ movieInfo.plot }}</p>
+        </div>
+        <div class="dir-flex">
+            <div class="director">
+                <p>
+                    Director: <span>{{ movieInfo.director }}</span>
+                </p>
+            </div>
+            <div class="cast">
+                <p>
+                    Stars: <span>{{ movieInfo.actors }}</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
